@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,6 +30,10 @@ public class Country {
     private Long id;
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "commonName", column = @Column(name = "commons")),
+            @AttributeOverride(name = "officialName", column = @Column(name = "official"))
+    })
     private CountryName name;
 
     private String region;

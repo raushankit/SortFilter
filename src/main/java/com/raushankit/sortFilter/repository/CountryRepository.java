@@ -1,9 +1,7 @@
 package com.raushankit.sortFilter.repository;
 
 import com.raushankit.sortFilter.entity.Country;
-import org.springframework.data.repository.CrudRepository;
+import com.raushankit.sortFilter.repo.SortFilterPagingRepository;
 
-import java.util.List;
-
-public interface CountryRepository extends CrudRepository<Country, Long> {
+public interface CountryRepository extends SortFilterPagingRepository<Country, Long> {
 }
